@@ -29,7 +29,7 @@
 
     /* Transitions */
     --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-standard: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-standard: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* 2. Base Reset & Typography */
@@ -268,7 +268,7 @@ section>.container>* {
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 24px 0;
+    padding: 12px 0;
     background: rgba(5, 5, 5, 0.8);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--vb-border);
@@ -282,7 +282,7 @@ section>.container>* {
 }
 
 .logo img {
-    height: 100px;
+    height: 130px;
     width: auto;
     filter: brightness(1.1);
 }
