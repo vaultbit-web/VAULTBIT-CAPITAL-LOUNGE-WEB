@@ -29,7 +29,7 @@
 
     /* Transitions */
     --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-standard: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-standard: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* 2. Base Reset & Typography */
@@ -281,7 +281,7 @@ section>.container>* {
 }
 
 .logo img {
-    height: 64px;
+    height: 80px;
     width: auto;
     filter: brightness(1.1);
 }
