@@ -268,7 +268,7 @@ section>.container>* {
     top: 0;
     width: 100%;
     z-index: 1000;
-    padding: 12px 0;
+    padding: 6px 0;
     background: rgba(5, 5, 5, 0.8);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--vb-border);
@@ -282,7 +282,7 @@ section>.container>* {
 }
 
 .logo img {
-    height: 130px;
+    height: 85px;
     width: auto;
     filter: brightness(1.1);
 }
