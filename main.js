@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemsToReveal = document.querySelectorAll('.grid-item, .stat-box, .hero-content > *, .spec-row, section > .container > *');
     itemsToReveal.forEach((item, index) => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(15px)';
-        item.style.transition = `all 0.4s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.05}s`;
+        item.style.transform = 'translateY(10px)';
+        item.style.transition = `all 0.3s cubic-bezier(0.16, 1, 0.3, 1) ${index * 0.03}s`;
         revealObserver.observe(item);
     });
 
