@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap link (Update with your production URL)
+Sitemap: https://vaultbit.es/sitemap.xml
