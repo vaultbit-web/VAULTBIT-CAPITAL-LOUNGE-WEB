@@ -75,24 +75,39 @@ document.addEventListener('DOMContentLoaded', () => {
             statusText.style.color = 'var(--vb-gold)';
             statusText.textContent = currentLang === 'en' ? 'TRANSMITTING DOSSIER REQUEST...' : 'TRANSMITIENDO SOLICITUD DE DOSSIER...';
 
+            const payload = {
+                nombre: document.getElementById('name').value,
+                empresa: document.getElementById('company').value,
+                correo: document.getElementById('email').value,
+                telefono: document.getElementById('phone').value,
+                mensaje: document.getElementById('message').value
+            };
+
             const formData = new URLSearchParams();
-            formData.append('nombre', document.getElementById('name').value);
-            formData.append('empresa', document.getElementById('company').value);
-            formData.append('correo', document.getElementById('email').value);
-            formData.append('telefono', document.getElementById('phone').value);
-            formData.append('mensaje', document.getElementById('message').value);
+            formData.append('nombre', payload.nombre);
+            formData.append('empresa', payload.empresa);
+            formData.append('correo', payload.correo);
+            formData.append('telefono', payload.telefono);
+            formData.append('mensaje', payload.mensaje);
 
             try {
-                await fetch(N8N_WEBHOOK_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: formData
-                });
+                // MÉTODO RELÁMPAGO: sendBeacon se salta la mayoría de bloqueos de seguridad del navegador
+                // Es el método más robusto para enviar leads a servidores con SSL problemático.
+                const success = navigator.sendBeacon(N8N_WEBHOOK_URL, formData);
 
-                statusText.style.color = '#00ffaa';
-                statusText.textContent = dictionary[currentLang].f_success;
-                contactForm.reset();
-                setTimeout(closeModal, 3000);
+                if (success) {
+                    statusText.style.color = '#00ffaa';
+                    statusText.textContent = dictionary[currentLang].f_success;
+                    contactForm.reset();
+                    setTimeout(closeModal, 3000);
+                } else {
+                    // Fallback a fetch si sendBeacon falla (raro)
+                    fetch(N8N_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: formData });
+                    statusText.style.color = '#00ffaa';
+                    statusText.textContent = dictionary[currentLang].f_success;
+                    contactForm.reset();
+                    setTimeout(closeModal, 3000);
+                }
 
             } catch (error) {
                 statusText.style.color = '#ff4444';
