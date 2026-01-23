@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- n8n CONFIGURATION ---
-    const N8N_WEBHOOK_URL = 'https://antigravity-n8n-6b9b7d-72-61-103-63.traefik.me/webhook-test/e02f16ac-4615-4a4c-8bbb-d98d1d9eb289';
+    const N8N_WEBHOOK_URL = 'https://dokployn8n.vaultbit.es/webhook/e02f16ac-4615-4a4c-8bbb-d98d1d9eb289';
 
     // 1. Navigation Reveal on Scroll
     const navbar = document.getElementById('navbar');
@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('mensaje', payload.mensaje);
 
             try {
+                // Fetch con mode: 'no-cors' para máxima compatibilidad si SSL falla o CORS es estricto
                 await fetch(N8N_WEBHOOK_URL, {
                     method: 'POST',
                     mode: 'no-cors',
@@ -183,8 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
             legal_desc: "VaultBit Capital Lounge S.L. operates strictly under **Management Consultancy (IAE 7022)** and **Machinery Intermediation (IAE 4614)**.",
             legal_p1: "<strong>Infrastructure Provider:</strong> We are the 'Engineers of Fortification'. The Host Partner retains ownership of the assets.",
             legal_p2: "<strong>Lease Model:</strong> VBCL is NOT a depositary (Art. 1758 CC). We provide the lease of functional high-security spaces.",
-            legal_p3: "<strong>Delegated Security:</strong> Active perimeter surveillance is mandatorily provided by the Host Partner via certified ESP agents.",
-            legal_p4: "<strong>Sovereignty Standards:</strong> Voluntary adherence to identification and AML protocols for institutional peace of mind.",
+            legal_p3: "<strong>Seguridad Delegada:</strong> La vigilancia perimetral activa la provee el partner mediante Empresas de Seguridad (ESP) certificadas.",
+            legal_p4: "<strong>Estándares de Soberanía:</strong> Adhesión voluntaria a protocolos de identificación y AML para tranquilidad institucional.",
 
             roi_mod: "TERMINAL // PARTNER MODEL",
             roi_title: "Strategic Asset Performance.",
@@ -313,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
             f_company: "INSTITUCIÓN / EMPRESA",
             p_company: "Nombre de la Entidad",
             f_email: "CORREO CORPORATIVO",
-            p_email: "id@institucion.com",
+            p_email: "id@institution.com",
             f_phone: "TELÉFONO",
             p_phone: "+XX 000 000 000",
             f_message: "REQUERIMIENTOS ESPECÍFICOS",
@@ -361,7 +362,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = lang;
     }
 });
-
-
-
-
