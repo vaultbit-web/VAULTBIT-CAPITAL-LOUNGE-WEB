@@ -361,3 +361,4 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = lang;
     }
 });
+
