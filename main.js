@@ -91,23 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('mensaje', payload.mensaje);
 
             try {
-                // MÉTODO RELÁMPAGO: sendBeacon se salta la mayoría de bloqueos de seguridad del navegador
-                // Es el método más robusto para enviar leads a servidores con SSL problemático.
-                const success = navigator.sendBeacon(N8N_WEBHOOK_URL, formData);
+                await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
 
-                if (success) {
-                    statusText.style.color = '#00ffaa';
-                    statusText.textContent = dictionary[currentLang].f_success;
-                    contactForm.reset();
-                    setTimeout(closeModal, 3000);
-                } else {
-                    // Fallback a fetch si sendBeacon falla (raro)
-                    fetch(N8N_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', body: formData });
-                    statusText.style.color = '#00ffaa';
-                    statusText.textContent = dictionary[currentLang].f_success;
-                    contactForm.reset();
-                    setTimeout(closeModal, 3000);
-                }
+                statusText.style.color = '#00ffaa';
+                statusText.textContent = dictionary[currentLang].f_success;
+                contactForm.reset();
+                setTimeout(closeModal, 3000);
 
             } catch (error) {
                 statusText.style.color = '#ff4444';
@@ -368,4 +361,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.lang = lang;
     }
 });
-
