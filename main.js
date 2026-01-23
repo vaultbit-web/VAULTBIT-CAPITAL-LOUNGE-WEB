@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- n8n CONFIGURATION ---
-    const N8N_WEBHOOK_URL = 'https://n8n.srv1108241.hstgr.cloud/webhook/e02f16ac-4615-4a4c-8bbb-d98d1d9eb289';
+    const N8N_WEBHOOK_URL = 'https://antigravity-n8n-6b9b7d-72-61-103-63.traefik.me/webhook/e02f16ac-4615-4a4c-8bbb-d98d1d9eb289';
 
     // 1. Navigation Reveal on Scroll
     const navbar = document.getElementById('navbar');
