@@ -36,6 +36,10 @@ document.getElementById('accessForm').addEventListener('submit', async (e) => {
             body: formData
         });
 
+        if (typeof fbq === 'function') {
+            fbq('track', 'Lead');
+        }
+
         status.innerText = 'SOLICITUD ENVIADA CORRECTAMENTE. REVISE SU EMAIL.';
         status.style.color = '#00ffaa';
         status.style.display = 'block';

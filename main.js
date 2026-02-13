@@ -98,6 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     body: formData
                 });
 
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+
                 statusText.style.color = '#00ffaa';
                 statusText.textContent = dictionary[currentLang].f_success;
                 contactForm.reset();
