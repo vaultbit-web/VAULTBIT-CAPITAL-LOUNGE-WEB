@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root {
+    --vb-black: #050505;
+    --vb-charcoal: #0F0F0F;
+    --vb-gold: #C5A059;
+    --vb-silver: #E2E8F0;
+    --vb-border: rgba(255, 255, 255, 0.08);
+    --vb-border-gold: rgba(197, 160, 89, 0.3);
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(5, 5, 5, 0.75), rgba(5, 5, 5, 0.9)), url('assets/hero_luxury.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--vb-silver);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+    padding: 60px 0;
+}
+
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    /* More subtle noise */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.portal-container {
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 25px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    width: 160px;
+    /* 50% larger than 120px */
+    margin-bottom: 30px;
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+h1 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--vb-silver);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--vb-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 40px;
+}
+
+.link-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.portal-link {
+    display: block;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--vb-border);
+    padding: 20px;
+    text-decoration: none;
+    color: var(--vb-silver);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.portal-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--vb-gold);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.portal-link:hover {
+    background: rgba(197, 160, 89, 0.05);
+    border-color: var(--vb-gold);
+    padding-left: 30px;
+    color: #fff;
+}
+
+.portal-link:hover::before {
+    transform: scaleY(1);
+}
+
+.portal-link span {
+    float: right;
+    color: var(--vb-gold);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.portal-link:hover span {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--vb-black);
+    border: 1px solid var(--vb-gold);
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(197, 160, 89, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--vb-silver);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--vb-gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vb-border);
+    padding: 12px;
+    color: #fff;
+    font-family: var(--font-sans);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--vb-gold);
+}
+
+.submit-btn {
+    width: 100%;
+    background: var(--vb-gold);
+    color: #000;
+    border: none;
+    padding: 14px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e0b86a;
+}
