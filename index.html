@@ -48,35 +48,24 @@
     <div class="portal-container">
         <img src="assets/vbcl_logo_white.png" alt="VaultBit Logo" class="logo">
 
-        <h1>VaultBit Capital Lounge</h1>
-        <h2>Grupo de Inversión Privada</h2>
+        <h1 style="color: #FFFFFF; font-size: 1.8rem; margin-bottom: 0.5rem; text-transform: uppercase;">BRIEFING
+            PRIVADO: INFRAESTRUCTURA DE CUSTODIA GRADO VII</h1>
+        <h2 style="color: #CCCCCC; font-size: 1rem; font-weight: 400; margin-bottom: 2rem;">Viernes 20 de Febrero |
+            Evento Exclusivo para Inversores y Socios B2B</h2>
 
-        <div class="link-grid">
-            <a href="https://vaultbit.es" class="portal-link">
-                Página Web
-                <span><i class="fa-solid fa-arrow-right-long"></i></span>
-            </a>
-            <a href="https://vaultbit.es/#/reserva-cajas" class="portal-link">
-                Reservas
-                <span><i class="fa-solid fa-lock"></i></span>
-            </a>
-            <a href="https://vaultbit.es/#/inversores" class="portal-link">
-                Inversión
-                <span><i class="fa-solid fa-chart-line"></i></span>
-            </a>
-            <a href="https://app.roundtable.eu/i/cs4GsSmL" class="portal-link">
-                Round Table [Comunidad Privada]
-                <span><i class="fa-solid fa-users"></i></span>
-            </a>
-            <a href="https://t.me/+L0jB1FwdNT5iZGE8" class="portal-link"
-                style="background: rgba(0, 136, 204, 0.05); border-color: rgba(0, 136, 204, 0.3);">
-                Comunidad Telegram
-                <span><i class="fa-brands fa-telegram"></i></span>
-            </a>
+        <p
+            style="color: #E0E0E0; font-size: 1.1rem; margin-bottom: 3rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300;">
+            Presentación de la primera infraestructura europea de seguridad física para activos digitales bajo normativa
+            MiCA y DORA.
+            <br><br>
+            <span style="color: #F7931A; font-weight: 500; font-size: 1.15rem;">Plazas limitadas. Acceso exclusivo bajo
+                registro.</span>
+        </p>
+
+        <div class="link-grid" style="grid-template-columns: 1fr; max-width: 400px; margin: 0 auto;">
             <button onclick="openModal()" class="portal-link"
-                style="text-align: left; cursor: pointer; width: 100%; background: rgba(197, 160, 89, 0.1); border-color: var(--vb-gold);">
-                Sesión Privada (20/02)
-                <span><i class="fa-solid fa-key"></i></span>
+                style="text-align: center; cursor: pointer; width: 100%; background: #F7931A; border: none; color: white; padding: 20px; font-weight: 700; font-size: 1.1rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+                SOLICITAR ACCESO AL BRIEFING
             </button>
         </div>
 
@@ -91,34 +80,16 @@
             <button class="close-btn" onclick="closeModal()">&times;</button>
             <h3
                 style="font-family: var(--font-mono); color: var(--vb-gold); margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem;">
-                Solicitud de Acceso - 20 Feb</h3>
+                SOLICITUD DE ACCESO AL BRIEFING</h3>
 
             <form id="accessForm">
                 <div class="form-group">
-                    <label>NOMBRE</label>
-                    <input type="text" name="nombre" required>
-                </div>
-                <div class="form-group">
-                    <label>APELLIDOS</label>
-                    <input type="text" name="apellidos" required>
+                    <label>NOMBRE COMPLETO</label>
+                    <input type="text" name="nombre" required placeholder="Tu nombre">
                 </div>
                 <div class="form-group">
                     <label>EMAIL CORPORATIVO</label>
-                    <input type="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label>TELÉFONO</label>
-                    <input type="tel" name="telefono" required>
-                </div>
-                <div class="form-group">
-                    <label>FORMA JURÍDICA</label>
-                    <select name="forma_juridica" required>
-                        <option value="S.L.">Sociedad Limitada (S.L.)</option>
-                        <option value="S.A.">Sociedad Anónima (S.A.)</option>
-                        <option value="Autónomo">Autónomo / Freelance</option>
-                        <option value="Patrimonial">Sociedad Patrimonial</option>
-                        <option value="Otro">Otra / Inversor Privado</option>
-                    </select>
+                    <input type="email" name="email" required placeholder="tu@email.com">
                 </div>
                 <button type="submit" class="submit-btn" id="submitBtn">CONFIRMAR ASISTENCIA</button>
                 <div id="statusMsg"

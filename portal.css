@@ -21,10 +21,7 @@
 }
 
 body {
-    background: linear-gradient(rgba(5, 5, 5, 0.8), rgba(5, 5, 5, 0.95)), url('assets/hero_luxury.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #1A1A1A;
     color: var(--vb-silver);
     font-family: var(--font-sans);
     min-height: 100vh;
@@ -49,16 +46,19 @@ body {
 .portal-container {
     z-index: 10;
     text-align: center;
-    width: 90%;
-    max-width: 480px;
-    padding: 60px 40px;
-    background: rgba(15, 15, 15, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 2px;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
     animation: portalFadeIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 @keyframes portalFadeIn {
@@ -141,34 +141,35 @@ body {
 }
 
 .logo {
-    width: 220px;
-    /* Increased size */
-    margin-bottom: 20px;
-    /* Reduced margin */
+    width: 280px;
+    margin-bottom: 40px;
     opacity: 1;
     filter: drop-shadow(0 0 30px rgba(197, 160, 89, 0.2));
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
     font-family: var(--font-serif);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 300;
     color: #fff;
-    margin-bottom: 4px;
-    /* Reduced margin */
+    margin-bottom: 8px;
     letter-spacing: -0.01em;
     font-style: italic;
+    line-height: 1.2;
 }
 
 h2 {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     color: var(--vb-gold);
     text-transform: uppercase;
-    letter-spacing: 0.4em;
-    margin-bottom: 30px;
-    /* Reduced margin */
-    opacity: 0.8;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+    opacity: 0.9;
+    line-height: 1.4;
 }
 
 .link-grid {
@@ -255,13 +256,16 @@ h2 {
 }
 
 .modal-content {
-    background: var(--vb-black);
-    border: 1px solid var(--vb-gold);
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px;
     width: 90%;
-    max-width: 500px;
+    max-width: 420px;
     position: relative;
-    box-shadow: 0 0 50px rgba(197, 160, 89, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
 }
 
 .close-btn {
@@ -308,7 +312,7 @@ h2 {
 
 .submit-btn {
     width: 100%;
-    background: var(--vb-gold);
+    background: #F7931A;
     color: #000;
     border: none;
     padding: 14px;
@@ -316,9 +320,63 @@ h2 {
     font-weight: 700;
     cursor: pointer;
     text-transform: uppercase;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 .submit-btn:hover {
-    background: #e0b86a;
+    background: #d67b11;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 147, 26, 0.2);
+}
+
+@media (max-width: 768px) {
+    .portal-container {
+        padding: 20px;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .logo {
+        width: 180px;
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 0.7rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 2rem !important;
+    }
+}
+
+@media (max-height: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .portal-container {
+        justify-content: center;
+        padding-top: 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    .logo {
+        width: 220px;
+        margin-bottom: 30px;
+    }
+
+    .portal-container {
+        padding-top: 20px;
+        justify-content: center;
+    }
 }
