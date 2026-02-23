@@ -48,25 +48,27 @@
     <div class="portal-container">
         <img src="assets/vbcl_logo_white.png" alt="VaultBit Logo" class="logo">
 
-        <h1 style="color: #FFFFFF; font-size: 1.8rem; margin-bottom: 0.5rem; text-transform: uppercase;">BRIEFING
-            PRIVADO: INFRAESTRUCTURA DE CUSTODIA GRADO VII</h1>
-        <h2 style="color: #CCCCCC; font-size: 1rem; font-weight: 400; margin-bottom: 2rem;">Viernes 20 de Febrero |
-            Evento Exclusivo para Inversores y Socios B2B</h2>
+        <h1>VAULTBIT <span style="color: #F7931A;">CAPITAL LOUNGE</span></h1>
+        <h2>Infraestructura Soberana & Inversión Privada</h2>
 
-        <p
-            style="color: #E0E0E0; font-size: 1.1rem; margin-bottom: 3rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300;">
-            Presentación de la primera infraestructura europea de seguridad física para activos digitales bajo normativa
-            MiCA y DORA.
-            <br><br>
-            <span style="color: #F7931A; font-weight: 500; font-size: 1.15rem;">Plazas limitadas. Acceso exclusivo bajo
-                registro.</span>
-        </p>
+        <div class="link-grid" style="grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; gap: 20px;">
+            <a href="https://app.roundtable.eu/i/cs4GsSmL" target="_blank" rel="noopener noreferrer"
+                class="portal-link main-link">
+                DEAL ROUNDTABLE
+                <span><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
 
-        <div class="link-grid" style="grid-template-columns: 1fr; max-width: 400px; margin: 0 auto;">
-            <button onclick="openModal()" class="portal-link"
-                style="text-align: center; cursor: pointer; width: 100%; background: #F7931A; border: none; color: white; padding: 20px; font-weight: 700; font-size: 1.1rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(247, 147, 26, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
-                SOLICITAR ACCESO AL BRIEFING
-            </button>
+            <a href="https://vaultbit.es/#/inversores" target="_blank" rel="noopener noreferrer"
+                class="portal-link main-link">
+                TESIS DE INVERSIÓN
+                <span><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <a href="https://t.me/+L0jB1FwdNT5iZGE8" target="_blank" rel="noopener noreferrer"
+                class="portal-link community-link">
+                COMUNIDAD DE INVERSORES (TELEGRAM)
+                <span><i class="fa-brands fa-telegram"></i></span>
+            </a>
         </div>
 
         <div class="social-footer">
@@ -74,29 +76,7 @@
         </div>
     </div>
 
-    <!-- Modal Form -->
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content">
-            <button class="close-btn" onclick="closeModal()">&times;</button>
-            <h3
-                style="font-family: var(--font-mono); color: var(--vb-gold); margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem;">
-                SOLICITUD DE ACCESO AL BRIEFING</h3>
 
-            <form id="accessForm">
-                <div class="form-group">
-                    <label>NOMBRE COMPLETO</label>
-                    <input type="text" name="nombre" required placeholder="Tu nombre">
-                </div>
-                <div class="form-group">
-                    <label>EMAIL CORPORATIVO</label>
-                    <input type="email" name="email" required placeholder="tu@email.com">
-                </div>
-                <button type="submit" class="submit-btn" id="submitBtn">CONFIRMAR ASISTENCIA</button>
-                <div id="statusMsg"
-                    style="margin-top: 15px; font-family: var(--font-mono); font-size: 0.8rem; display: none;"></div>
-            </form>
-        </div>
-    </div>
 
     <script src="portal.js"></script>
 </body>

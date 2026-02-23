@@ -21,9 +21,13 @@
 }
 
 body {
-    background-color: #1A1A1A;
-    color: var(--vb-silver);
-    font-family: var(--font-sans);
+    background-color: #030303;
+    background-image: linear-gradient(rgba(3, 3, 3, 0.88), rgba(3, 3, 3, 0.98)), url('assets/hero_luxury.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #FFFFFF;
+    font-family: var(--font-grotesk), var(--font-sans);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -142,33 +146,32 @@ body {
 
 .logo {
     width: 280px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     opacity: 1;
-    filter: drop-shadow(0 0 30px rgba(197, 160, 89, 0.2));
+    filter: drop-shadow(0 0 40px rgba(197, 160, 89, 0.3));
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 h1 {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-family: var(--font-grotesk);
+    font-size: 2.2rem;
+    font-weight: 700;
     color: #fff;
-    margin-bottom: 8px;
-    letter-spacing: -0.01em;
-    font-style: italic;
-    line-height: 1.2;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--vb-gold);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin-bottom: 24px;
-    opacity: 0.9;
+    font-family: var(--font-grotesk);
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #B0B0B0;
+    letter-spacing: 0.05em;
+    margin-bottom: 35px;
     line-height: 1.4;
 }
 
@@ -182,19 +185,18 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 18px 24px;
+    padding: 22px 30px;
     text-decoration: none;
-    color: rgba(226, 232, 240, 0.7);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 500;
+    font-family: var(--font-grotesk);
     text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
     letter-spacing: 0.1em;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(12px);
+    border-radius: 8px;
 }
 
 .portal-link::after {
@@ -215,16 +217,41 @@ h2 {
     left: 100%;
 }
 
-.portal-link:hover {
-    background: rgba(197, 160, 89, 0.08);
-    border-color: rgba(197, 160, 89, 0.4);
-    color: #fff;
-    transform: translateX(4px);
+.portal-link.main-link {
+    background: rgba(247, 147, 26, 0.08);
+    border: 1px solid rgba(247, 147, 26, 0.3);
+    color: #FFFFFF;
 }
 
-.portal-link span {
-    color: var(--vb-gold);
-    font-size: 0.9rem;
+.portal-link.main-link:hover {
+    background: rgba(247, 147, 26, 0.15);
+    border-color: #F7931A;
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(247, 147, 26, 0.15);
+}
+
+.portal-link.main-link span {
+    color: #F7931A;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.portal-link.community-link {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(226, 232, 240, 0.9);
+}
+
+.portal-link.community-link:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(4px);
+    color: #FFFFFF;
+}
+
+.portal-link.community-link span {
+    color: #FFFFFF;
+    font-size: 1rem;
     transition: transform 0.3s ease;
 }
 
